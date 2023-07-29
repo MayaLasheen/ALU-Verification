@@ -8,14 +8,14 @@ class scoreboard;
   logic [7:0] out;
   logic carry;
   logic [8:0] tmp;
-  event ok;
+  //event ok;
   
 
   
   
   string p;
   string op;
-  string faulty;
+  //string faulty;
   
   function new(mailbox #(transaction) mon2scb);
     this.mon2scb = mon2scb;
