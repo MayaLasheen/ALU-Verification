@@ -21,7 +21,7 @@ class driver;
     begin
           transaction trans;
           gen2driv.get(trans);
-      @(posedge vif.clk);
+          @(posedge vif.clk);
           vif.A <= trans.A;
           vif.B <= trans.B;
           vif.ALU_Sel <= trans.ALU_Sel;
