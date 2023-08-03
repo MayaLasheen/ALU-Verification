@@ -1,6 +1,6 @@
 //`include "Transaction.sv"
 `include "Interface.sv"
-import package_1::*;
+import myPackage::*;
 
 class driver;
   virtual intf vif;
