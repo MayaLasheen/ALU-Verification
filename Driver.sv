@@ -27,6 +27,7 @@ class driver;
           vif.ALU_Sel <= trans.ALU_Sel;
           trans.display("Driver");
           trans.ALU_Out = vif.ALU_Out;
+          trans.CarryOut = vif.CarryOut;
           //->drv_done;
           //@monitor_done(i);
       	  //i++;
