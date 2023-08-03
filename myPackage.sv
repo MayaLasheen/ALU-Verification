@@ -1,6 +1,8 @@
-package package_1;
+package myPackage;
 
-  class transaction;
+// Code your testbench here
+// or browse Examples
+class transaction;
   
   rand reg[7:0] A,B;
   reg[3:0] ALU_Sel;
@@ -106,8 +108,6 @@ package package_1;
 					A >= 192;
 					A <= 255;
   }
-  
-  
 
   
 endclass: transaction
