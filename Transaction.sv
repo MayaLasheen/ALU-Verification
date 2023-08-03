@@ -30,11 +30,10 @@ class transaction;
   
   
   function void display(string name);
-    $display("-------------------------");
     $display("%s",name);
     $display("A = %d, B = %d, ALU_Sel = %d", A, B, ALU_Sel);
     $display("ALU_Out = %d, CarryOut = %d", ALU_Out, CarryOut);
-    $display("-------------------------");
+    $display("--------------------------------------");
   endfunction
   
   constraint lower {
