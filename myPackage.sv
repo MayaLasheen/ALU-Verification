@@ -1,7 +1,5 @@
 package myPackage;
 
-// Code your testbench here
-// or browse Examples
 class transaction;
   
   rand reg[7:0] A,B;
