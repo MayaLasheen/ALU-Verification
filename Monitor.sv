@@ -1,6 +1,6 @@
 //`include "Interface.sv"
 //`include "Transaction.sv"
-import package_1::*;
+import myPackage::*;
 
 class monitor;
   
