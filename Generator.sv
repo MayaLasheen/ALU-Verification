@@ -138,7 +138,7 @@ class generator;
 	item.upper.constraint_mode(0);
 	j++;
       end
-      item.randomize();
+      void'(item.randomize());
       item.display("Generator");
       //item.cg.sample();
       //$display("*****Coverage = %f*****", item.cg.get_coverage());
