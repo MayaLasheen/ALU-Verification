@@ -1,5 +1,5 @@
 //`include "Transaction.sv"
-import package_1::*;
+import myPackage::*;
 
 class scoreboard;
   transaction trans;
