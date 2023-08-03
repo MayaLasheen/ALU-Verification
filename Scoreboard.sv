@@ -10,9 +10,6 @@ class scoreboard;
   logic [8:0] tmp;
   //event ok;
   
-
-  
-  
   string p;
   string op;
   //string faulty;
@@ -26,8 +23,8 @@ class scoreboard;
     repeat(1920)
     begin
       mon2scb.get(trans);   
-	  tmp = {1'b0,trans.A} + {1'b0,trans.B};
-  	  carry = tmp[8]; // Carryout flag
+      tmp = {1'b0,trans.A} + {1'b0,trans.B};
+      carry = tmp[8]; // Carryout flag
       case(trans.ALU_Sel)
         4'b0000: // Addition
 	begin
@@ -103,6 +100,7 @@ class scoreboard;
       if(out === trans.ALU_Out)
         if(carry === trans.CarryOut) begin
           p = "Test Pass";
+	  $display("Successful Operation: %s", op);
           trans.cg.sample();
       	  //-> ok;
         end
@@ -115,8 +113,11 @@ class scoreboard;
       //trans.ALU_Out = out;
        $display("Faulty Operation: %s", op);
       end
+       $display("Expected Output: \nALU_Out = %d, CarryOut: %d", trans.ALU_Out, trans.CarryOut);
+       $display("Actual Output: \nALU_Out = %d, CarryOut: %d", out, carry);
        trans.display({"Scoreboard ", p});
        $display("*****Coverage***** = %f", trans.cg.get_inst_coverage());
+       $display("--------------------------------------");
     end
   endtask: main
   
@@ -125,4 +126,5 @@ class scoreboard;
     wait(ok.triggered);
     $display("*****Coverage = %f*****", trans.cg.get_coverage());
   endtask*/
+
 endclass: scoreboard
