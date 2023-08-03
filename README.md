@@ -1,4 +1,4 @@
-# ALU_Verification
+# ALU-Verification
 <p align = "justify">A testbench was implemented using the verification methodology in order to verify an ALU RTL to ensure that the ALU functions correctly and reliably, and to detect the present bugs, if any.</p>
 <p align = "justify">The ALU has 3 inputs and 2 outputs.</p>
 <p align = "justify">
