@@ -113,9 +113,9 @@ class scoreboard;
       //trans.ALU_Out = out;
        $display("Faulty Operation: %s", op);
       end
-       $display("Expected Output: \nALU_Out = %d, CarryOut: %d", trans.ALU_Out, trans.CarryOut);
-       $display("Actual Output: \nALU_Out = %d, CarryOut: %d", out, carry);
        trans.display({"Scoreboard ", p});
+       $display("Expected Output: \nALU_Out = %d, CarryOut: %d", out, carry);
+       $display("Actual Output: \nALU_Out = %d, CarryOut: %d", trans.ALU_Out, trans.CarryOut);
        $display("*****Coverage***** = %f", trans.cg.get_inst_coverage());
        $display("--------------------------------------");
     end
