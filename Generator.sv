@@ -16,7 +16,7 @@ class generator;
     int j = 0;
     repeat(1920)   
     begin
-      transaction item = new;
+      item = new;
       if(i%10 == 0) begin
         item.ALU_Sel = j%16;
 	item.upper.constraint_mode(0);
