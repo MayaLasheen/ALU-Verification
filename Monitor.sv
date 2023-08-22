@@ -1,22 +1,19 @@
-//`include "Interface.sv"
-//`include "Transaction.sv"
 import myPackage::*;
 
 class monitor;
   
   virtual intf vif;
-  //virtual clk_interface vcif;
   mailbox #(transaction) mon2scb;
-  //event monitor_done [4];
+  mailbox #(transaction) mon2asrt;
   
-  function new (virtual intf vif, mailbox #(transaction) mon2scb);
+  function new (virtual intf vif, mailbox #(transaction) mon2scb, mailbox #(transaction) mon2asrt);
     this.vif = vif;
     this.mon2scb = mon2scb;
+    this.mon2asrt = mon2asrt;
   endfunction: new
   
   task main;
-    //int i = 0;
-        repeat(1920)
+    repeat(1924) //1920 Randomized Transactions + 4 Corner Case Transactions
           begin
             transaction trans;
             trans = new();
@@ -28,12 +25,8 @@ class monitor;
             trans.ALU_Out = vif.ALU_Out;
             trans.CarryOut = vif.CarryOut;
             mon2scb.put(trans);
+            mon2asrt.put(trans);
             trans.display("Monitor");
-            //$display("Messages: %d", mon2scb.num());
-            //$display("Virtual Interface");
-            //$display("A = %d, B = %d, ALU_Sel = %d", vif.A, vif.B, vif.ALU_Sel);
-            //->monitor_done(i);
-            //i++;
           end
   endtask
 endclass : monitor
