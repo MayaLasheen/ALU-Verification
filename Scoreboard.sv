@@ -73,7 +73,7 @@ class scoreboard;
 	end
           4'b1100: // Logical nand 
 	begin
-           out = !(trans.A & trans.B); op = "Logical NAND" ;
+           out = ~(trans.A & trans.B); op = "Logical NAND" ;
 	end
           4'b1101: // Logical xnor
 	begin
