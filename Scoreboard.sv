@@ -1,4 +1,3 @@
-//`include "Transaction.sv"
 import myPackage::*;
 
 class scoreboard;
@@ -8,11 +7,9 @@ class scoreboard;
   logic [7:0] out;
   logic carry;
   logic [8:0] tmp;
-  //event ok;
   
   string p;
   string op;
-  //string faulty;
   
   function new(mailbox #(transaction) mon2scb);
     this.mon2scb = mon2scb;
@@ -20,7 +17,7 @@ class scoreboard;
   endfunction: new
   
   task main;
-    repeat(1920)
+    repeat(1924)
     begin
       mon2scb.get(trans);   
       tmp = {1'b0,trans.A} + {1'b0,trans.B};
@@ -102,7 +99,6 @@ class scoreboard;
           p = "Test Pass";
 	  $display("Successful Operation: %s", op);
           trans.cg.sample();
-      	  //-> ok;
         end
       	else begin
           p = "Test Fail";
@@ -110,7 +106,6 @@ class scoreboard;
 	end
       else begin
         p = "Test Fail";
-      //trans.ALU_Out = out;
        $display("Faulty Operation: %s", op);
       end
        trans.display({"Scoreboard ", p});
@@ -119,12 +114,7 @@ class scoreboard;
        $display("*****Coverage***** = %f", trans.cg.get_inst_coverage());
        $display("--------------------------------------");
     end
+	  
   endtask: main
-  
-  
-  /*task displayCoverage();
-    wait(ok.triggered);
-    $display("*****Coverage = %f*****", trans.cg.get_coverage());
-  endtask*/
 
 endclass: scoreboard
