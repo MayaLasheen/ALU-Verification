@@ -1,5 +1,3 @@
-// Code your testbench here
-// or browse Examples
 class transaction;
   
   rand reg[7:0] A,B;
@@ -30,9 +28,12 @@ class transaction;
   
   
   function void display(string name);
+    //$display("-------------------------");
     $display("%s",name);
-    $display("A = %d, B = %d, ALU_Sel = %d", A, B, ALU_Sel);
+    //$display("T = %d, A = %d, B = %d, ALU_Sel = %d",$time, A, B, ALU_Sel);
+    $display("A = %d, B = %d, ALU_Sel = %d",A, B, ALU_Sel);
     $display("ALU_Out = %d, CarryOut = %d", ALU_Out, CarryOut);
+    //$display("-------------------------");
     $display("--------------------------------------");
   endfunction
   
@@ -106,5 +107,4 @@ class transaction;
 					A <= 255;
   }
 
-  
-endclass: transaction
+endclass
