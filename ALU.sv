@@ -1,4 +1,3 @@
-// Code your design here
 module ALU(
            input [7:0] A,B,  // ALU 8-bit Inputs                 
            input [3:0] ALU_Sel,// ALU Selection
