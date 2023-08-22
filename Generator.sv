@@ -14,7 +14,11 @@ class generator;
   task main();
     int i = 0;
     int j = 0;
-    repeat(1920)   
+    int k = 0;
+    int l = 0;
+    repeat(1920) 
+    // Why 1920?
+    // 16*120 = 1920 -> 120 operations for each ALU_Sel
     begin
       item = new;
       if(i%10 == 0) begin
@@ -140,18 +144,26 @@ class generator;
       end
       void'(item.randomize());
       item.display("Generator");
-      //item.cg.sample();
-      //$display("*****Coverage = %f*****", item.cg.get_coverage());
       gen2driv.put(item);
       i=i+1;
-      //-> ok;
-      //@(drv_done);
     end
+    //4 Extra Corner Cases
+      item = new;
+      item.A = 0; item.B = 0; item.ALU_Sel = 1;
+      item.display("Generator");
+      gen2driv.put(item);
+      item = new;
+      item.A = 128; item.B = 128; item.ALU_Sel = 1;
+      item.display("Generator");
+      gen2driv.put(item);
+      item = new;
+      item.A = 0; item.B = 0; item.ALU_Sel = 9;
+      item.display("Generator");
+      gen2driv.put(item);
+      item = new;
+      item.A = 255; item.B = 255; item.ALU_Sel = 9;
+      item.display("Generator");
+      gen2driv.put(item);
   endtask: main
-  
-  /*task displayCoverage();
-    @(ok);
-    $display("*****Coverage = %f*****", item.cg.get_coverage());
-  endtask*/
 
 endclass: generator
