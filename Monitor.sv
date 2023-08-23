@@ -13,7 +13,7 @@ class monitor;
   endfunction: new
   
   task main;
-    repeat(1924) //1920 Randomized Transactions + 4 Corner Case Transactions
+    repeat(1952) //1920 Randomized Transactions + 32 Corner Case Transactions
           begin
             transaction trans;
             trans = new();
