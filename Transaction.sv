@@ -17,7 +17,7 @@ class transaction;
       bins upper_middle = {[128:191]};
       bins upper = {[192:255]};}
     op_code: coverpoint ALU_Sel {
-      option.at_least = 120;
+	    option.at_least = 122; //120 Randomized Transactions + 2 Corner Cases (A = 0, B=0 and A = 255, B = 255)
       bins instructions [16] = {[0:15]};}
     cross_coverage: cross input_1, input_2, op_code;
   endgroup;
@@ -106,5 +106,16 @@ class transaction;
 					A >= 192;
 					A <= 255;
   }
+
+  constraint Corner_Case_1 {
+					A == 0;
+					B == 0;
+  }
+
+  constraint Corner_Case_2 {
+					A == 255;
+					B == 255;
+  }
+
 
 endclass
