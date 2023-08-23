@@ -17,7 +17,7 @@ class scoreboard;
   endfunction: new
   
   task main;
-    repeat(1924)
+    repeat(1952)
     begin
       mon2scb.get(trans);   
       tmp = {1'b0,trans.A} + {1'b0,trans.B};
