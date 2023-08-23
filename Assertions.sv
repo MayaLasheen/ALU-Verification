@@ -12,14 +12,16 @@ class assertions;
   endfunction: new
   
   task main;
-    repeat(1924)
+	  repeat(1952)
     begin
+	    
       mon2asrt.get(trans); 
       Corner_Case_1: assert (trans.A == 0 && trans.B == 0) $display("Corner Case 1 is Tested"); else ;
       Corner_Case_2: assert (trans.A == 255 && trans.B == 255) $display("Corner Case 2 is Tested"); else ;
       tmp = {1'b0,trans.A} + {1'b0,trans.B};
       carry = tmp[8]; // Carryout flag
       Carry_Out: assert (trans.CarryOut == carry) $display("Carry Out Assertion Passed"); else $display("Carry Out Assertion Failed");
+	    
       case(trans.ALU_Sel)
         4'b0000: // Addition	 
            Addition: assert (trans.ALU_Out == trans.A + trans.B) $display("Addition Assertion Passed"); else $display("Addition Assertion Failed");
