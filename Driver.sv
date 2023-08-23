@@ -11,7 +11,7 @@ class driver;
   endfunction: new
   
   task main;
-    repeat(1924)
+    repeat(1952)
     begin
           transaction trans;
           gen2driv.get(trans);
