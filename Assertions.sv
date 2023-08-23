@@ -12,7 +12,7 @@ class assertions;
   endfunction: new
   
   task main;
-   repeat(1952)
+    repeat(1924)
     begin
 	    
       mon2asrt.get(trans); 
