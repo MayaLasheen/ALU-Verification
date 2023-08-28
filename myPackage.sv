@@ -21,7 +21,8 @@ class transaction;
     op_code: coverpoint ALU_Sel {
 	    option.at_least = 122; //120 Randomized Transactions + 2 Corner Cases (A = 0, B=0 and A = 255, B = 255)
       bins instructions [16] = {[0:15]};}
-    cross_coverage: cross input_1, input_2, op_code;
+    cross_coverage: cross input_1, input_2, op_code {
+      illegal_bins divisionByZero = binsof(input_2.lower) intersect {0} && binsof (op_code.instructions) intersect {3};}
   endgroup;
   
   function new();
