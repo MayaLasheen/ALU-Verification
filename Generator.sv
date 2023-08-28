@@ -164,6 +164,7 @@ class generator;
       i=i+1;
     end
     //Corner Cases
+    //The illegal operation (B = 0 and ALU_Sel = 0 "Division by 0") was intentionally added to test the illegal_bins feature.
     i = 0;
     j = 0;
     repeat(32) 
