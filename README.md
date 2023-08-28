@@ -30,6 +30,12 @@ The ALU DUT (Device Under Test) has 3 bugs, namely Subtraction, Logical OR and L
 <p align = "center">
 <kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/ff78115f-97dc-481f-a3d6-07d8fd7f8082" alt="Logical NAND"/></kbd>
 </p>
+<p align = "justify">
+As a result of manually adding the <i>division by 0</i> corner case (B=0 and ALU_Sel=0 ), the illegal_bin feature was tested and the following error occured.
+</p>
+<p align = "center">
+<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/88ad6882-319f-4403-b277-f04f38d0ca56" alt="Illegal Bin"/></kbd>
+</p>
 
 <b>Coverage</b>
 <p align = "justify">  
@@ -37,10 +43,10 @@ The HTML coverage report as well as detailed coverage report were generated to a
 </p>
 
 <p align = "center"><b>HTML Coverage Report</b>
-<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/5feb62ff-83e3-4a40-a5cd-75eb27b8653f" alt="HTML Coverage Report"/></kbd></p> 
+<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/fbe399f5-2837-43d4-bb52-ed7d9407f611" alt="HTML Coverage Report"/></kbd></p> 
 
 <p align = "center"><b>Covergroup Coverage Summary</b>
-<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/88ae1a9c-4a6b-4534-9557-44187424257d"/></kbd></p>
+<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/0e99c5c9-937c-45d2-8eef-809eed68028e"/></kbd></p>
 
 <p align = "center"><b>Operation Code Coverage Details</b>
 <kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/55163dd6-c535-4103-aaa3-718640e156ad" alt="Operation Code Coverage Details"/></kbd></p>
@@ -49,7 +55,10 @@ The HTML coverage report as well as detailed coverage report were generated to a
 <kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/12df047e-1c98-44ea-a00f-4f16e9ad4cb8" alt="Assertions Coverage Summary"/></kbd></p>
 
 <p align = "center"><b>Detailed Coverage Report</b>
-<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/8a2f25e7-572f-471c-a15f-14b4cf370810" alt="Detailed Coverage Report 1"/></kbd></p>
+<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/af288fa8-fcea-4441-8097-682808aed1bc" alt="Detailed Coverage Report 1"/></kbd></p>
 
 <p align = "center">
-<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/4901c3dc-286b-4d06-8249-5e6bdaa05ac8" alt="Detailed Coverage Report 2"/></kbd></p>
+<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/713f932d-70e9-4730-9a30-3f550af83f3b" alt="Detailed Coverage Report 2"/></kbd></p>
+
+<p align = "center">
+<kbd><img src="https://github.com/MayaLasheen/ALU-Verification/assets/137602736/10115be8-335d-4be9-a666-8b3627e9a6d8" alt="Division by 0"/></kbd></p>
