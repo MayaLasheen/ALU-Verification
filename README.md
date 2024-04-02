@@ -1,3 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Format.css">
+</head>
+<body>
+<h1>Hyper-Dimensional Biosignal Classifier for EMG Hand-Gesture Recognition</h1>
+
+<h2>Table of Contents</h2>
+<ul>
+    <li><a href="#Description">Description</a></li>
+    <li><a href="#Structure">File Structure</a>
+    <ul>
+        <li><a href="#IM">Item Memory</a></li>
+        <li><a href="#E1">Encoder 1</a></li>
+        <li><a href="#E2">Encoder 2</a></li>
+        <li><a href="#AM">Associative Memory</a></li>
+    </ul>
+    </li>
+    
+</ul>
+
+<h2 id="Description">Description</h2>
+<p align = "justify">This project implements a hand gesture recognition system using Verilog hardware description language (HDL). 
+    It leverages hyperdimensional computing (HDC) principles to recognize hand gestures based on input Electromyography
+    (EMG) signals from sensors.</p>
+<h2 id="Structure">File Structure</h2>
+    <!--<p>HDC.v: Main Verilog Module.</p>
+    <p>It consists of the following modules:
+    <ul><li>Item Memory: </li>
+    <li>Encoder_1.v & Enocder_2.v: Verilog modules for encoding input gesture patterns into hyperdimensional vectors.
+        Each encoder consists of the following modules:
+        <ul><li><i>HLU Pipeline</i> which consists of <i>HLU Layers</i> which consist of <i>Hyper-Dimensional Logic Units (HLUs)</i>.</li>
+            <li>Accumulator</li>
+        </ul></li>
+    <li>Assoviative_Memory: </li>
+</ul></p> -->
+
+<!--<h2>Block Diagrams</h2>-->
+<ul>
+    <li><h4 id="IM"><strong>Item Memory</strong></h4></li>
+    <p align = "justify">It stores 1024 pre-generated random vectors of 2048 bits in Read-Only Memories (ROMs).
+       Each vector in Item Memory is distributed across 16 ROMs. Each ROM was instantiated as an array of size 1024 with a word-size of 128-bits.
+       16 ROMs were concatenated together to get a total width of 2048 to be able to store the hyper-dimensionals vector.
+    </p>
+
+    <li><h4 id="E1"><strong>Encoder 1</strong></h4></li>
+
+    <ul><li><h4>First Implementation</h4></li>
+    <img src="C:\My Laptop\University\Semester 8\To Do List\Block Diagrams\Encoder 1.png" class="center_1"></img>
+    <li><h4>Second Implementation "Better"</h4></li>
+    <img src="C:\My Laptop\University\Semester 8\To Do List\Block Diagrams\Modified_Encoder_1.png" class="center_1"></img></ul></li>
+
+    <li><h4 id="E2"><strong>Encoder 2</strong></h4></li>
+    <img src="C:\My Laptop\University\Semester 8\To Do List\Block Diagrams\Encoder 2.jpg" class="center_3"></img>
+
+    </br></br>
+
+    <p align = "justify">Each <i>Encoder</i> consists of the following modules: <i><a href="#Pipe">HLU Pipeline</a></i> and an <i><a href="#Acc">Accumulator</a></i>.<br>
+    These modules, along with their corresponding block diagrams, are presented in the following section.</p>
+
+    <ul>
+    <li><h4 id="Pipe"><strong>HLU Pipeline</strong></h4></li>
+    <p align = "justify"></p>It consists of several HLU Layers pipelined together where each layer is made of D Hyper-Dimensional Logic Units.</p>
+    <ul>
+        <li><h4>Hyper-Dimensional Logic Unit (HLU)</h4></li>
+        <p align = "justify">It takes 2 single-bit operands, A and B. It can multiply (C = A ⊕ B), delay (C = A) and permute-and-multiply 
+            (C = A ⊕ ρ(B)) according to the values of ‘op’ and ‘permute’ signals.</p>
+        <img src="C:\My Laptop\University\Semester 8\To Do List\Block Diagrams\HLU.png" class="center_1"></img>
+
+        <li><h4>HLU Layer</h4></li>
+        <p align = "justify">D Hyper-Dimensional Units are connected together to form the ‘HLU Layer’ which can operate on entire hypervectors (D: dimension of the hyper-dimensional vector). 
+            It takes 2 hyper-dimensional vectors A and B and performs operation on them to output hyper-dimensional vector C.</p>
+        <img src="C:\My Laptop\University\Semester 8\To Do List\Block Diagrams\HLU Layer.png" class="center_2"></img>
+
+        <li><h4>HLU Pipeline</h4></li>
+        <p align = "justify">It conists of several HLU Layers pipelined together as shown in the block diagram.</p>
+        <img src="C:\My Laptop\University\Semester 8\To Do List\Block Diagrams\HLU Pipeline.png" class="center_1"></img>  
+        <h4>The first encoder pipelines 2 HLU Layers, while the second encoder pipelines 7 HLU Layers.
+
+        </h4>   
+    </ul>
+
+
+    <li><h4 id="Acc"><strong>Accumulator</strong></li></h4>
+    <p align = "justify">It is connected to the output of the pipeline for superposition. It consists of D 2's complement counters which can either decrement
+        or decrement according to the value of 'direction' signal.
+    </p>
+    <p align = "justify">ENABLEREG is programmed to mark the cycles of arrival of required terms and enable the counters for accumulation.</p>
+    <p align = "justify">Output is the vector formed by counters' Most Significant Bits (MSBs) i.e. thresholded at 0.</p>
+    <img src="C:\My Laptop\University\Semester 8\To Do List\Block Diagrams\Accumulator.png" class="center_2"></img>
+</ul>
+    
+    
+    <li><h4 id="AM"><strong>Associative Memory</strong></h4></li>
+    <p align = "justify"></p>
+
+</ul>
+</body>
+</html>
 # ALU Verification
 <p align = "justify">A complete verification environment (including assertions) was implemented in SystemVerilog langauge on Mentor QuestaSim in order to verify an ALU RTL to ensure that the ALU functions correctly and reliably, and to detect the present bugs, if any.</p>
 <p align = "justify">The ALU has 3 input ports and 2 output ports.</p>
